@@ -1,12 +1,9 @@
 # Clion and SDL2 Setup
+To avoid using goofy-ass IDE->Codeblock at classes, I forked repo, that provides fast & easy set up for SDL lib for CLion.
+After setting up project in CLion go to the section *Code adjustments*.
+Have fun using normal IDE.
 
-It's been so hard to find a decent guide about how to set up Clion and SDL2, so I made one for my future self and for
-some random person on internet who find this. I hope it helps you.
 
-We are going to use the **bundled MinGw 64 bits version that comes with Clion**, if you use 32 bits version you should
-replace the CMakeLists.txt file with the proper directories paths.
-
-**Note:** This project was tested on Windows 64 bits.
 
 ## Fast setup
 
@@ -14,6 +11,7 @@ All the files needed to make it work are already uploaded. You just need to open
 
 * Download or clone the repository
 
+### I recommend this one. Really. 
 ```
 git clone https://github.com/llanillo/clion-cmake-sdl2-template
 ```
@@ -55,6 +53,7 @@ If your exit code is 0 and Clion detects your SDL2 headers then you are good to 
 * The paths should be exactly as told otherwise change the folder's paths inside the CMakeLists.txt.
 * MingGw should be the default toolchains for Clion.
 * Add SDL2 and cmake folders to the gitignore.
+* Disable Avast or other antivirus software if needed (or exclude project directory from it's range of scanning).
 
 ## Project tree example
 
@@ -79,3 +78,12 @@ find_package(SDL2_image REQUIRED)
 ```
 
 **Modify the SDL2_IMAGE_PATH if you are using the 32 bit version**
+
+
+# Code adjustments
+
+1. Make sure, that path to the resources you use in your program is correct. Entry point of CMake to look for files is main project directory.
+<p align="center">
+  <img src="resources/Example3.png"  alt="example"/>
+</p>
+
